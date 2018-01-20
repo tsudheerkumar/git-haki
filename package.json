@@ -1,0 +1,33 @@
+{
+  "name": "git-haki",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "eslint src/**/*.js --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsudheerkumar/git-haki.git"
+  },
+  "keywords": [
+    "githooks",
+    "git-hooks",
+    "hooks",
+    "hook",
+    "git hooks",
+    "git hook",
+    "githook"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tsudheerkumar/git-haki/issues"
+  },
+  "homepage": "https://github.com/tsudheerkumar/git-haki#readme",
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
+  }
+}
