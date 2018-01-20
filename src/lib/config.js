@@ -1,6 +1,6 @@
 module.exports = {
   options: {
-    hashbang: '#!/usr/bin/node',
+    hashbang: '#!/usr/bin/env node',
     name: 'pre-commit',
     bashDest: '.git/hooks',
     templatePath: 'haki.js',

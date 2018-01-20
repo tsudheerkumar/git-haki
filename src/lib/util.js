@@ -13,11 +13,11 @@ const getContent = (filePath) => {
 
 class Utils {
   constructor(options) {
-    this.options = Object.assign(config.options, options);
+    this.options = Object.assign({}, config.options, options);
   }
   create() {
-    let { templatePath, bashDest} = this.options;
-    const { name, doNotModify} = this.options;
+    let { templatePath, bashDest } = this.options;
+    const { name, doNotModify } = this.options;
 
     logger.info(`Genrating hooks for ${name}`);
 
