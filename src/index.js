@@ -24,3 +24,5 @@ new GitHaki([
         templatePath: 'logger.js'
     }
 ]);
+
+module.exports = GitHaki;
