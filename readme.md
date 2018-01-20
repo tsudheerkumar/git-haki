@@ -35,5 +35,5 @@ Will add support for
 
 ## How can you help
 - Please log issues or feature requests
-- Create PRs with feature request by forking rep
+- Create PRs with feature request by forking rep to DEVELOP branch
 - Help in creating and improving documentation
