@@ -10,16 +10,19 @@ Advanatage of git-haki over existing hooks:
 
 >1)pre-commit:-
 
-    pre-commit hooks runs while you commit the code.It will run the tasks on the entirecode base but it will not check for staged or unstaged files.
+    pre-commit hooks runs while you commit the code.It will run the tasks on the entirecode base 
+    but it will not check for staged or unstaged files.
     If the fixes or buggy code in unstaged files,it will leads to buggy code in Dev branch.
 
-    To avoid this,git-haki will ask user to commit all the code i.e, all the code changes should be staged and there should not be any unstaged files.
+    To avoid this,git-haki will ask user to commit all the code i.e, all the code changes should be staged 
+    and there should not be any unstaged files.
     So,that tasks run on proper code base in achieving error free code commit in to the branch.
 
 
 >2)pre-push:-
 
-    pre-push hooks runs while you push the code.It will run the tasks on the entirecode base but it will not check for staged or unstaged files.
+    pre-push hooks runs while you push the code.It will run the tasks on the entirecode base
+    but it will not check for staged or unstaged files.
     If the fixes or buggy code in staged/unstaged files,it will leads to buggy code in Dev branch.
 
     To avoid this,git-haki will ask user to commit all the code i.e, all the code changes should be staged and  committed.
