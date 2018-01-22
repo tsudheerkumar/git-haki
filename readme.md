@@ -25,8 +25,8 @@ Advanatage of git-haki over existing hooks:
     but it will not check for staged or unstaged files.
     If the fixes or buggy code in staged/unstaged files,it will leads to buggy code in Dev branch.
 
-    To avoid this,git-haki will ask user to commit all the code i.e, all the code changes should be staged and  committed.
-    There should not be any staged/unstaged files before push.
+    To avoid this,git-haki will ask user to commit all the code i.e,
+    all the code changes should be staged and committed.There should not be any staged/unstaged files before push.
     
     So,that tasks run on proper code base in achieving error free code push in to the branch.
 
