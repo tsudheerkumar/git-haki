@@ -2,11 +2,14 @@
 
 A simple way to add git hooks. 
 Hooks enable team to only push quality code. Haki makes it easier to create hooks.
-Git-haki is a simple node module  which can be leveraged for git hooks to achieve automation of build tasks with code commit and push.
-It is not task runner specific and expects simple configuration with hook anme and tasks needs to be run with that hook.
+
+>Git-haki is a simple node module  which can be leveraged for git hooks to achieve automation of build tasks with code commit and push.
+It is not task runner specific and expects simple configuration with hook name and tasks needs to be run with that hook.
 
 Advanatage of git-haki over existing hooks:
+
 1)pre-commit:-
+
     pre-commit hooks runs while you commit the code.It will run the tasks on the entirecode base butit will not check for staged or unstaged files.
     If the fixes or buggy code in unstaged files,it will leads to buggy code in Dev branch.
 
@@ -15,6 +18,7 @@ Advanatage of git-haki over existing hooks:
 
 
 2)pre-push:-
+
     pre-push hooks runs while you push the code.It will run the tasks on the entirecode base but it will not check for staged or unstaged files.
     If the fixes or buggy code in staged/unstaged files,it will leads to buggy code in Dev branch.
 
@@ -32,7 +36,8 @@ This will install the git-haki as devdependencies.
 To use
 
 > const GitHaki = require('git-haki');
-GitHaki({
+
+> GitHaki({
     name: 'post-commit',
     command: 'npm test'
 });
