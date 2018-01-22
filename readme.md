@@ -10,7 +10,7 @@ Advanatage of git-haki over existing hooks:
 
 >1)pre-commit:-
 
-    pre-commit hooks runs while you commit the code.It will run the tasks on the entirecode base 
+    pre-commit hooks runs while you commit the code.It will run the tasks on the entire code base 
     but it will not check for staged or unstaged files.
     If the fixes or buggy code in unstaged files,it will leads to buggy code in Dev branch.
 
@@ -21,7 +21,7 @@ Advanatage of git-haki over existing hooks:
 
 >2)pre-push:-
 
-    pre-push hooks runs while you push the code.It will run the tasks on the entirecode base
+    pre-push hooks runs while you push the code.It will run the tasks on the entire code base
     but it will not check for staged or unstaged files.
     If the fixes or buggy code in staged/unstaged files,it will leads to buggy code in Dev branch.
 
@@ -43,9 +43,9 @@ To use
 > const GitHaki = require('git-haki');
 
 > GitHaki({
-    name: 'post-commit',
-    command: 'npm test'
-});
+>    name: 'post-commit',
+>    command: 'npm test'
+>});
 
 This will create post commit git hook which will run npm test script specified in your projects package json.
 
