@@ -43,12 +43,16 @@ To use
 
 > const GitHaki = require('git-haki');
 
+create a gulp/grunt task with task runner and use the following code and run the task once.
+
 > GitHaki({
->    name: 'post-commit',
+>    name: 'pre-commit',
 >    command: 'npm test'
 >});
 
-This will create post commit git hook which will run npm test script specified in your projects package json.
+This will create pre commit git hook which will run npm test script specified in your projects package json.
+
+If you want to to update the command with adding or modifying the tasks,you need to run the grunt/gulp task again to update the hooks.
 
 
 ## Limitation
