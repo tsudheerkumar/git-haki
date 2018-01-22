@@ -1,5 +1,5 @@
 # git-haki@1.0.0
-![git-haki](git_haki.svg)
+![git-haki](git-haki.png)
 
 A simple way to add git hooks. 
 Hooks enable team to only push quality code. Haki makes it easier to create hooks.
