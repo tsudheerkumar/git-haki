@@ -8,24 +8,20 @@ const config = {
 
 const log = (msg) => {
   if (config.isDebugMode) {
-    console.log(chalk.green(`\nlog: ${config.prefix} ${msg}\n`));
+    console.log(chalk.green(`\nlog: ${config.prefix} ${msg}`));
   }
 };
 
 const info = (msg) => {
-  console.info(chalk.green(`\ninfo: ${config.prefix} ${msg}\n`));
+  console.info(chalk.green(`\ninfo: ${config.prefix} ${msg}`));
 };
 
 const warn = (msg) => {
-  if (config.isDebugMode) {
-    console.warn(chalk.blue(`\nwarning: ${config.prefix} ${msg}\n`));
-  }
+  console.warn(chalk.blue(`\nwarning: ${config.prefix} ${msg}`));
 };
 
 const error = (msg) => {
-  if (config.isDebugMode) {
-    console.error(chalk.red(`\nerror: ${config.prefix} ${msg}\n`));
-  }
+  console.error(chalk.red(`\nerror: ${config.prefix} ${msg}`));
 };
 module.exports = {
   log,

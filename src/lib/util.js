@@ -19,7 +19,7 @@ class Utils {
     let { templatePath, bashDest } = this.options;
     const { name, doNotModify, pathError } = this.options;
 
-    logger.info(`Genrating hooks for ${name}`);
+    if (!doNotModify) logger.info(`Genrating hooks for ${name}`);
 
     bashDest = path.resolve(bashDest, name);
     templatePath = `${__dirname}/${templatePath}`;
@@ -40,10 +40,10 @@ class Utils {
 
       fs.chmodSync(bashDest, '755');
     } catch (err) {
-      throw new Error(pathError);
+      throw new Error(logger.error(pathError));
     }
 
-    logger.info(`Genrated hooks for ${name}`);
+    if (!doNotModify) logger.info(`Genrated hooks for ${name}`);
   }
   getConfiguration() {
     const { name, command } = this.options;
