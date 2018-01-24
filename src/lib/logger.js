@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+const chalk = require('chalk');
 
 const config = {
   isDebugMode: false,
@@ -7,23 +8,23 @@ const config = {
 
 const log = (msg) => {
   if (config.isDebugMode) {
-    console.log(`\n ${config.prefix} ${msg}\n`);
+    console.log(chalk.green(`\nlog: ${config.prefix} ${msg}\n`));
   }
 };
 
 const info = (msg) => {
-  console.info(`\ninfo: ${config.prefix} ${msg}\n`);
+  console.info(chalk.green(`\ninfo: ${config.prefix} ${msg}\n`));
 };
 
 const warn = (msg) => {
   if (config.isDebugMode) {
-    console.warn(`\nwarning: ${config.prefix} ${msg}\n`);
+    console.warn(chalk.blue(`\nwarning: ${config.prefix} ${msg}\n`));
   }
 };
 
 const error = (msg) => {
   if (config.isDebugMode) {
-    console.error(`\nerror: ${config.prefix} ${msg}\n`);
+    console.error(chalk.red(`\nerror: ${config.prefix} ${msg}\n`));
   }
 };
 module.exports = {

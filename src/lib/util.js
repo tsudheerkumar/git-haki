@@ -13,6 +13,7 @@ const getContent = (filePath) => {
 
 class Utils {
   constructor(options) {
+    config.options.bashDest = options.bashDest ? options.bashDest : config.options.bashDest;
     this.options = Object.assign({}, config.options, options);
   }
   create() {
