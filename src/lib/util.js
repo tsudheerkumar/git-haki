@@ -7,7 +7,6 @@ const getContent = (filePath) => {
   if (fs.existsSync(filePath)) {
     return fs.readFileSync(filePath, { encoding: 'utf-8' });
   }
-
   return null;
 };
 
@@ -18,12 +17,11 @@ class Utils {
   }
   create() {
     let { templatePath, bashDest } = this.options;
-    const { name, doNotModify } = this.options;
+    const { name, doNotModify, pathError } = this.options;
 
     logger.info(`Genrating hooks for ${name}`);
 
     bashDest = path.resolve(bashDest, name);
-
     templatePath = `${__dirname}/${templatePath}`;
 
     let fileContent = getContent(templatePath);
@@ -37,10 +35,13 @@ class Utils {
             \n\n
             ${fileContent}`;
     }
+    try {
+      fs.writeFileSync(bashDest, fileContent);
 
-    fs.writeFileSync(bashDest, fileContent);
-
-    fs.chmodSync(bashDest, '755');
+      fs.chmodSync(bashDest, '755');
+    } catch (err) {
+      throw new Error(pathError);
+    }
 
     logger.info(`Genrated hooks for ${name}`);
   }
