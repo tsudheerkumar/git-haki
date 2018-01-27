@@ -7,22 +7,21 @@ const getContent = (filePath) => {
   if (fs.existsSync(filePath)) {
     return fs.readFileSync(filePath, { encoding: 'utf-8' });
   }
-
   return null;
 };
 
 class Utils {
   constructor(options) {
+    config.options.bashDest = options.bashDest ? options.bashDest : config.options.bashDest;
     this.options = Object.assign({}, config.options, options);
   }
   create() {
     let { templatePath, bashDest } = this.options;
-    const { name, doNotModify } = this.options;
+    const { name, doNotModify, pathError } = this.options;
 
-    logger.info(`Genrating hooks for ${name}`);
+    if (!doNotModify) logger.info(`Genrating hooks for ${name}`);
 
     bashDest = path.resolve(bashDest, name);
-
     templatePath = `${__dirname}/${templatePath}`;
 
     let fileContent = getContent(templatePath);
@@ -36,12 +35,15 @@ class Utils {
             \n\n
             ${fileContent}`;
     }
+    try {
+      fs.writeFileSync(bashDest, fileContent);
 
-    fs.writeFileSync(bashDest, fileContent);
+      fs.chmodSync(bashDest, '755');
+    } catch (err) {
+      throw new Error(logger.error(pathError));
+    }
 
-    fs.chmodSync(bashDest, '755');
-
-    logger.info(`Genrated hooks for ${name}`);
+    if (!doNotModify) logger.info(`Genrated hooks for ${name}`);
   }
   getConfiguration() {
     const { name, command } = this.options;

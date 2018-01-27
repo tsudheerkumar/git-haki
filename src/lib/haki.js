@@ -10,7 +10,7 @@ exec(config.excCommand, (err) => {
   let exitCode = 0;
   if (err) {
     exitCode = -1;
-    logger.info(config.startMsg);
+    logger.error(config.startMsg);
     process.exit(exitCode);
   } else {
     logger.info(`Code ${config.name.replace('pre-', '')} is in progress...`);
@@ -21,7 +21,7 @@ exec(config.excCommand, (err) => {
       let exitStatusCode = 0;
       if (error) {
         exitStatusCode = -1;
-        logger.info('Errors!!! Please fix them and try again.');
+        logger.error('Errors!!! Please fix them and try again.');
       } else {
         logger.info(config.endMsg);
       }

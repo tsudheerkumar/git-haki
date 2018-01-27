@@ -47,7 +47,8 @@ create a gulp/grunt task with task runner and use the following code and run the
 
 > GitHaki({
 >    name: 'pre-commit',
->    command: 'npm test'
+>    command: 'npm test',
+>    bashDest: "Relative path to '.git/hooks' directory" // by default it would take '.git/hooks' in root directory if not given
 >});
 
 This will create pre commit git hook which will run npm test script specified in your projects package json.

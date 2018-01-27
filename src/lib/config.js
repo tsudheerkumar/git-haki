@@ -5,6 +5,7 @@ module.exports = {
     bashDest: '.git/hooks',
     templatePath: 'haki.js',
     doNotModify: false,
+    pathError: 'Please provide relative path to ./git/hooks in config in bashDest param',
   },
   'pre-commit': {
     startMsg: 'Please commit/stash unstaged files in working directory',
