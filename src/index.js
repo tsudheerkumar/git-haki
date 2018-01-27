@@ -13,7 +13,7 @@ const GitHaki = function generateHooks(options) {
     loggerConfig.bashDest = options[0].bashDest;
   }
   options.unshift(loggerConfig);
-  
+
   if (options.doNotModify && !options.doNotModify) logger.info('We are ready to genrate git hooks \n');
   options.forEach((hook) => {
     const util = new Utility.Utils(hook);

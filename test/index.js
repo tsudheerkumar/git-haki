@@ -11,8 +11,4 @@ GitHaki([
     command: 'npm test',
     bashDest: '.git/hooks',
   },
-  {
-    name: 'pre-push',
-    command: 'npm test',
-  },
 ]);
