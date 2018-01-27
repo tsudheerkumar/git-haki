@@ -4,8 +4,6 @@ const logger = require('./logger');
 // HOOK STARTS
 const { exec } = require('child_process');
 
-const cwd = process.cwd(); // Current working directory
-
 exec(config.excCommand, (err) => {
   let exitCode = 0;
   if (err) {
@@ -15,7 +13,7 @@ exec(config.excCommand, (err) => {
   } else {
     logger.info(`Code ${config.name.replace('pre-', '')} is in progress...`);
     exec(config.taskCommand, { // command to tasks for commit
-      cwd,
+      cwd: config.cwd,
       maxBuffer: Infinity, // buffer size to display logs
     }, (error) => {
       let exitStatusCode = 0;
