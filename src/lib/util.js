@@ -54,7 +54,8 @@ class Utils {
                 startMsg:"${startMsg}",
                 endMsg: "${endMsg}",
                 excCommand: "${excCommand}",
-                taskCommand: "${command}"
+                taskCommand: "${command}",
+                cwd:"${process.cwd()}"
             };
         \n`;
   }
