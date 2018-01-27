@@ -2,6 +2,7 @@ const Utility = require('./lib/util');
 const logger = require('./lib/logger');
 
 const GitHaki = function generateHooks(options) {
+
   const loggerConfig = {
     name: 'logger.js',
     doNotModify: true,
