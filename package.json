@@ -1,6 +1,6 @@
 {
   "name": "git-haki",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Haki is a simple way to configure git hook",
   "main": "src/index.js",
   "scripts": {

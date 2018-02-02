@@ -55,6 +55,9 @@ This will create pre commit git hook which will run npm test script specified in
 
 If you want to to update the command with adding or modifying the tasks,you need to run the grunt/gulp task again to update the hooks.
 
+## Slack integartion
+
+Added slack integration
 
 ## Limitation
 
