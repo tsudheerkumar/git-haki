@@ -48,6 +48,7 @@ class Utils {
   getConfiguration() {
     const { name, command } = this.options;
     const { startMsg, endMsg, excCommand } = config[name];
+    const cwd = process.cwd().split(path.sep).join('/');
     return `\n
             const config = {
                 name: "${name}",
@@ -55,7 +56,7 @@ class Utils {
                 endMsg: "${endMsg}",
                 excCommand: "${excCommand}",
                 taskCommand: "${command}",
-                cwd:"${process.cwd()}"
+                cwd:"${cwd}"
             };
         \n`;
   }
